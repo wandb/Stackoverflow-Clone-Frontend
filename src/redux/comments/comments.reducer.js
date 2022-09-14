@@ -28,9 +28,7 @@ export default function comments(state = initialState, action) {
     case DELETE_COMMENT:
       return {
         ...state,
-        comments: state.comments.filter(
-          (answer) => answer.id !== action.payload
-        ),
+        comments: state.comments.filter(answer => answer.id !== action.payload),
         loading: false,
       };
     case COMMENT_ERROR:

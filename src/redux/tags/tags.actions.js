@@ -1,8 +1,8 @@
 import {setAlert} from '../alert/alert.actions';
 import {GET_TAG, GET_TAGS, TAG_ERROR} from './tags.types';
-import { allTagsData, singleTagData } from '../../api/tagsApi';
+import {allTagsData, singleTagData} from '../../api/tagsApi';
 
-export const getTag = (tagName) => async (dispatch) => {
+export const getTag = tagName => async dispatch => {
   try {
     const res = await singleTagData(tagName);
 
@@ -20,7 +20,7 @@ export const getTag = (tagName) => async (dispatch) => {
   }
 };
 
-export const getTags = () => async (dispatch) => {
+export const getTags = () => async dispatch => {
   try {
     const res = await allTagsData();
 

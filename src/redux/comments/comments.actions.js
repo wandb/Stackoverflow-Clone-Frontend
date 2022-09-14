@@ -1,13 +1,17 @@
-import { setAlert } from "../alert/alert.actions";
+import {setAlert} from '../alert/alert.actions';
 import {
   GET_COMMENTS,
   COMMENT_ERROR,
   ADD_COMMENT,
   DELETE_COMMENT,
-} from "./comments.types";
-import { allCommentsData, createSingleComment, deleteSingleComment } from "../../api/commentsApi";
+} from './comments.types';
+import {
+  allCommentsData,
+  createSingleComment,
+  deleteSingleComment,
+} from '../../api/commentsApi';
 
-export const getComments = (id) => async (dispatch) => {
+export const getComments = id => async dispatch => {
   try {
     const res = await allCommentsData(id);
 
@@ -18,13 +22,13 @@ export const getComments = (id) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: COMMENT_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: {msg: err.response.statusText, status: err.response.status},
     });
   }
 };
 
 // Add COMMENT
-export const addComment = (postId, formData) => async (dispatch) => {
+export const addComment = (postId, formData) => async dispatch => {
   try {
     const res = await createSingleComment(postId, formData);
 
@@ -33,21 +37,21 @@ export const addComment = (postId, formData) => async (dispatch) => {
       payload: res.data.data,
     });
 
-    dispatch(setAlert(res.data.message, "success"));
+    dispatch(setAlert(res.data.message, 'success'));
 
     dispatch(getComments(postId));
   } catch (err) {
-    dispatch(setAlert(err.response.data.message, "danger"));
+    dispatch(setAlert(err.response.data.message, 'danger'));
 
     dispatch({
       type: COMMENT_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: {msg: err.response.statusText, status: err.response.status},
     });
   }
 };
 
 // Delete Comment
-export const deleteComment = (CommentId) => async (dispatch) => {
+export const deleteComment = CommentId => async dispatch => {
   try {
     const res = await deleteSingleComment(CommentId);
 
@@ -56,13 +60,13 @@ export const deleteComment = (CommentId) => async (dispatch) => {
       payload: CommentId,
     });
 
-    dispatch(setAlert(res.data.message, "success"));
+    dispatch(setAlert(res.data.message, 'success'));
   } catch (err) {
-    dispatch(setAlert(err.response.data.message, "danger"));
+    dispatch(setAlert(err.response.data.message, 'danger'));
 
     dispatch({
       type: COMMENT_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: {msg: err.response.statusText, status: err.response.status},
     });
   }
 };

@@ -1,13 +1,17 @@
-import { setAlert } from "../alert/alert.actions";
+import {setAlert} from '../alert/alert.actions';
 import {
   GET_ANSWERS,
   ANSWER_ERROR,
   ADD_ANSWER,
   DELETE_ANSWER,
-} from "./answers.types";
-import { allAnswersData, createSingleAnswer, deleteSingleAnswer } from "../../api/answersApi";
+} from './answers.types';
+import {
+  allAnswersData,
+  createSingleAnswer,
+  deleteSingleAnswer,
+} from '../../api/answersApi';
 
-export const getAnswers = (id) => async (dispatch) => {
+export const getAnswers = id => async dispatch => {
   try {
     const res = await allAnswersData(id);
 
@@ -18,13 +22,13 @@ export const getAnswers = (id) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: ANSWER_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: {msg: err.response.statusText, status: err.response.status},
     });
   }
 };
 
 // Add Answer
-export const addAnswer = (postId, formData) => async (dispatch) => {
+export const addAnswer = (postId, formData) => async dispatch => {
   try {
     const res = await createSingleAnswer(postId, formData);
 
@@ -33,21 +37,21 @@ export const addAnswer = (postId, formData) => async (dispatch) => {
       payload: res.data.data,
     });
 
-    dispatch(setAlert(res.data.message, "success"));
+    dispatch(setAlert(res.data.message, 'success'));
 
     dispatch(getAnswers(postId));
   } catch (err) {
-    dispatch(setAlert(err.response.data.message, "danger"));
+    dispatch(setAlert(err.response.data.message, 'danger'));
 
     dispatch({
       type: ANSWER_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: {msg: err.response.statusText, status: err.response.status},
     });
   }
 };
 
 // Delete Answer
-export const deleteAnswer = (AnswerId) => async (dispatch) => {
+export const deleteAnswer = AnswerId => async dispatch => {
   try {
     const res = await deleteSingleAnswer(AnswerId);
 
@@ -56,13 +60,13 @@ export const deleteAnswer = (AnswerId) => async (dispatch) => {
       payload: AnswerId,
     });
 
-    dispatch(setAlert(res.data.message, "success"));
+    dispatch(setAlert(res.data.message, 'success'));
   } catch (err) {
-    dispatch(setAlert(err.response.data.message, "danger"));
+    dispatch(setAlert(err.response.data.message, 'danger'));
 
     dispatch({
       type: ANSWER_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: {msg: err.response.statusText, status: err.response.status},
     });
   }
 };

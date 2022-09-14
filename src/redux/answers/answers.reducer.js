@@ -28,7 +28,7 @@ export default function answers(state = initialState, action) {
     case DELETE_ANSWER:
       return {
         ...state,
-        answers: state.answers.filter((answer) => answer.id !== action.payload),
+        answers: state.answers.filter(answer => answer.id !== action.payload),
         loading: false,
       };
     case ANSWER_ERROR:

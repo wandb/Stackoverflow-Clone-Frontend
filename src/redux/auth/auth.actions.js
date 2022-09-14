@@ -1,4 +1,4 @@
-import { loadUserData, registerUser, loginUser } from '../../api/authApi'
+import {loadUserData, registerUser, loginUser} from '../../api/authApi';
 import setAuthToken from './auth.utils';
 import {setAlert} from '../alert/alert.actions';
 import {
@@ -12,7 +12,7 @@ import {
 } from './auth.types';
 
 // Load User
-export const loadUser = () => async (dispatch) => {
+export const loadUser = () => async dispatch => {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
   }
@@ -31,51 +31,55 @@ export const loadUser = () => async (dispatch) => {
 };
 
 // Register User
-export const register = ({ username, password }) => async (dispatch) => {
-  try {
-    const res = await registerUser(username, password);
+export const register =
+  ({username, password}) =>
+  async dispatch => {
+    try {
+      const res = await registerUser(username, password);
 
-    dispatch({
-      type: REGISTER_SUCCESS,
-      payload: res.data.data,
-    });
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: res.data.data,
+      });
 
-    dispatch(setAlert(res.data.message, 'success'));
+      dispatch(setAlert(res.data.message, 'success'));
 
-    dispatch(loadUser());
-  } catch (err) {
-    dispatch(setAlert(err.response.data.message, 'danger'));
+      dispatch(loadUser());
+    } catch (err) {
+      dispatch(setAlert(err.response.data.message, 'danger'));
 
-    dispatch({
-      type: REGISTER_FAIL,
-    });
-  }
-};
+      dispatch({
+        type: REGISTER_FAIL,
+      });
+    }
+  };
 
 // Login User
-export const login = ({username, password}) => async (dispatch) => {
-  try {
-    const res = await loginUser(username, password);
+export const login =
+  ({username, password}) =>
+  async dispatch => {
+    try {
+      const res = await loginUser(username, password);
 
-    dispatch({
-      type: LOGIN_SUCCESS,
-      payload: res.data.data,
-    });
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data.data,
+      });
 
-    dispatch(setAlert(res.data.message, 'success'));
+      dispatch(setAlert(res.data.message, 'success'));
 
-    dispatch(loadUser());
-  } catch (err) {
-    dispatch(setAlert(err.response.data.message, 'danger'));
+      dispatch(loadUser());
+    } catch (err) {
+      dispatch(setAlert(err.response.data.message, 'danger'));
 
-    dispatch({
-      type: LOGIN_FAIL,
-    });
-  }
-};
+      dispatch({
+        type: LOGIN_FAIL,
+      });
+    }
+  };
 
 //LOGOUT
-export const logout = () => (dispatch) => {
+export const logout = () => dispatch => {
   dispatch(setAlert('User has logged out', 'success'));
   localStorage.removeItem('token');
 

@@ -20,7 +20,7 @@ import TagPage from './modules/TagPage/TagPage.component';
 import ProfilePage from './modules/ProfilePage/ProfilePage.component';
 import NotFound from './modules/NotFound/NotFound.component';
 
-import { BaseRoute, LayoutRoute } from './Router';
+import {BaseRoute, LayoutRoute} from './Router';
 
 import './App.css';
 
@@ -35,85 +35,70 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <div className='App'>
+      <div className="App">
         <Header />
         <Alert />
         <Switch>
           <LayoutRoute
             exact
-            path='/'
-            title='CLONE Stack Overflow - Where Developers Learn, Share, & Build Careers'
+            path="/"
+            title="CLONE Stack Overflow - Where Developers Learn, Share, & Build Careers"
           >
-            <HomePage/>
+            <HomePage />
           </LayoutRoute>
           <LayoutRoute
             exact
-            path='/questions'
-            title='All Questions - CLONE Stack Overflow'
+            path="/questions"
+            title="All Questions - CLONE Stack Overflow"
           >
-            <QuestionsPage/>
+            <QuestionsPage />
           </LayoutRoute>
-          <LayoutRoute
-            exact
-            path='/tags'
-            title='Tags - CLONE Stack Overflow'
-          >
-            <AllTagsPage/>
+          <LayoutRoute exact path="/tags" title="Tags - CLONE Stack Overflow">
+            <AllTagsPage />
           </LayoutRoute>
-          <LayoutRoute
-            exact
-            path='/users'
-            title='Users - CLONE Stack Overflow'
-          >
-            <AllUsersPage/>
+          <LayoutRoute exact path="/users" title="Users - CLONE Stack Overflow">
+            <AllUsersPage />
           </LayoutRoute>
           <BaseRoute
             exact
-            path='/register'
-            title='Sign Up - CLONE Stack Overflow'
+            path="/register"
+            title="Sign Up - CLONE Stack Overflow"
           >
-            <Register/>
+            <Register />
           </BaseRoute>
-          <BaseRoute
-            exact
-            path='/login'
-            title='Log In - CLONE Stack Overflow'
-          >
-            <Login/>
+          <BaseRoute exact path="/login" title="Log In - CLONE Stack Overflow">
+            <Login />
           </BaseRoute>
           <LayoutRoute
             exact
-            path='/questions/:id'
-            title='Users - CLONE Stack Overflow'
+            path="/questions/:id"
+            title="Users - CLONE Stack Overflow"
           >
-            <Post/>
+            <Post />
           </LayoutRoute>
           <LayoutRoute
             exact
-            path='/users/:id'
-            title='Users - CLONE Stack Overflow'
+            path="/users/:id"
+            title="Users - CLONE Stack Overflow"
           >
-            <ProfilePage/>
+            <ProfilePage />
           </LayoutRoute>
           <LayoutRoute
             exact
-            path='/tags/:tagname'
-            title='Users - CLONE Stack Overflow'
+            path="/tags/:tagname"
+            title="Users - CLONE Stack Overflow"
           >
-            <TagPage/>
+            <TagPage />
           </LayoutRoute>
           <BaseRoute
             exact
-            path='/add/question'
-            title='Ask a Question - CLONE Stack Overflow'
+            path="/add/question"
+            title="Ask a Question - CLONE Stack Overflow"
           >
-            <PostForm/>
+            <PostForm />
           </BaseRoute>
-          <BaseRoute
-            path='*'
-            title='Error 404'
-          >
-            <NotFound/>
+          <BaseRoute path="*" title="Error 404">
+            <NotFound />
           </BaseRoute>
         </Switch>
       </div>

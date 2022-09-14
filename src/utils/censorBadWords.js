@@ -1,11 +1,11 @@
-import Filter from "bad-words";
+import Filter from 'bad-words';
 
 const replaceRegex = /(?<=.).+(?=.)/;
-const placeHolder = (str) => "*".repeat(str.length);
+const placeHolder = str => '*'.repeat(str.length);
 
-const badWordsFilter = new Filter({ replaceRegex, placeHolder });
+const badWordsFilter = new Filter({replaceRegex, placeHolder});
 
-const censorBadWords = (val) => {
+const censorBadWords = val => {
   let censored = val;
   const containsEnglishWords = /\b/.test(val);
 
@@ -16,5 +16,5 @@ const censorBadWords = (val) => {
   return censored;
 };
 
-export { badWordsFilter };
+export {badWordsFilter};
 export default censorBadWords;

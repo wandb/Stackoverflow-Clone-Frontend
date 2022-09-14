@@ -1,4 +1,4 @@
-import config from "../config";
+import config from '../config';
 
 // Users
 export const usersData = config.BASE_URL + '/api/users';
@@ -18,13 +18,17 @@ export const deleteSinglePost = config.BASE_URL + '/api/posts/{id}';
 
 // Answers
 export const allAnswersData = config.BASE_URL + '/api/posts/answers/{id}';
-export const createSingleAnswer = config.BASE_URL + '/api/posts/answers/{postId}';
-export const deleteSingleAnswer = config.BASE_URL + '/api/posts/answers/{AnswerId}';
+export const createSingleAnswer =
+  config.BASE_URL + '/api/posts/answers/{postId}';
+export const deleteSingleAnswer =
+  config.BASE_URL + '/api/posts/answers/{AnswerId}';
 
 // Comments
 export const allCommentsData = config.BASE_URL + '/api/posts/comments/{id}';
-export const createSingleComment = config.BASE_URL + '/api/posts/comments/{postId}';
-export const deleteSingleComment = config.BASE_URL + '/api/posts/comments/{CommentId}';
+export const createSingleComment =
+  config.BASE_URL + '/api/posts/comments/{postId}';
+export const deleteSingleComment =
+  config.BASE_URL + '/api/posts/comments/{CommentId}';
 
 // Tags
 export const allTagsData = config.BASE_URL + '/api/tags';

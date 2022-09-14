@@ -6,6 +6,6 @@ export const usersData = () => {
   return axios.get(_usersData);
 };
 
-export const profileData = (id) => {
+export const profileData = id => {
   return axios.get(_profileData.replace('{id}', id));
 };
