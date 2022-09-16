@@ -1,3 +1,30 @@
+a {
+  color: #f6bf42 !important;
+  &.fc-blue-600 {
+    color: #f6bf42 !important;
+  }
+}
+.s-btn.s-btn__primary {
+  background-color: #f6bf42 !important;
+  color: black !important;
+}
+.s-btn.s-btn__filled {
+  background-color: rgba(246, 192, 66, 0.8) !important;
+  border-color: #f6bf42 !important;
+  color: black !important;
+  &.is-selected {
+    background-color: #f6bf42 !important;
+    border-color: #fcbe2d !important;
+  }
+}
+.s-tag {
+  background-color: #f6bf42 !important;
+  color: black !important;
+}
+.MuiPaginationItem-root.Mui-selected {
+  background-color: #f6bf42 !important;
+}
+
 .navbar {
   height: 63px;
   border-top: 3px solid #f6bf42;
