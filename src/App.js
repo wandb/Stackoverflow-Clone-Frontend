@@ -42,59 +42,52 @@ const App = () => {
           <LayoutRoute
             exact
             path="/"
-            title="CLONE Stack Overflow - Where Developers Learn, Share, & Build Careers"
-          >
+            title="Gradient Explosion - Where ML Practitioners Learn, Share, & Build Careers">
             <HomePage />
           </LayoutRoute>
           <LayoutRoute
             exact
             path="/questions"
-            title="All Questions - CLONE Stack Overflow"
-          >
+            title="All Questions - Gradient Explosion">
             <QuestionsPage />
           </LayoutRoute>
-          <LayoutRoute exact path="/tags" title="Tags - CLONE Stack Overflow">
+          <LayoutRoute exact path="/tags" title="Tags - Gradient Explosion">
             <AllTagsPage />
           </LayoutRoute>
-          <LayoutRoute exact path="/users" title="Users - CLONE Stack Overflow">
+          <LayoutRoute exact path="/users" title="Users - Gradient Explosion">
             <AllUsersPage />
           </LayoutRoute>
           <BaseRoute
             exact
             path="/register"
-            title="Sign Up - CLONE Stack Overflow"
-          >
+            title="Sign Up - Gradient Explosion">
             <Register />
           </BaseRoute>
-          <BaseRoute exact path="/login" title="Log In - CLONE Stack Overflow">
+          <BaseRoute exact path="/login" title="Log In - Gradient Explosion">
             <Login />
           </BaseRoute>
           <LayoutRoute
             exact
             path="/questions/:id"
-            title="Users - CLONE Stack Overflow"
-          >
+            title="Users - Gradient Explosion">
             <Post />
           </LayoutRoute>
           <LayoutRoute
             exact
             path="/users/:id"
-            title="Users - CLONE Stack Overflow"
-          >
+            title="Users - Gradient Explosion">
             <ProfilePage />
           </LayoutRoute>
           <LayoutRoute
             exact
             path="/tags/:tagname"
-            title="Users - CLONE Stack Overflow"
-          >
+            title="Users - Gradient Explosion">
             <TagPage />
           </LayoutRoute>
           <BaseRoute
             exact
             path="/add/question"
-            title="Ask a Question - CLONE Stack Overflow"
-          >
+            title="Ask a Question - Gradient Explosion">
             <PostForm />
           </BaseRoute>
           <BaseRoute path="*" title="Error 404">

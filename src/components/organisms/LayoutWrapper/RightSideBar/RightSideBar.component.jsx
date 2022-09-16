@@ -9,7 +9,7 @@ const RightSideBar = () => {
   return (
     <Fragment>
       <div id='sidebar' className='side-bar'>
-        <SideBarWidget />
+        {/* <SideBarWidget /> */}
         <TagsWidget />
       </div>
     </Fragment>

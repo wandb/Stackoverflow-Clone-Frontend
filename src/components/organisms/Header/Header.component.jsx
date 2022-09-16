@@ -99,12 +99,8 @@ const Header = ({auth: {isAuthenticated, loading, user}, logout}) => {
         </div>
         <div className='header-brand-div'>
           <Link className='navbar-brand' to='/'>
-            <Logo className='full-logo' />
-            <SmallLogo className='glyph-logo' />
+            <img src={`/logo-transparent.png`} style={{width: 32}}/>
           </Link>
-          {!loading && (
-            <Fragment>{isAuthenticated ? authTabs : guestTabs}</Fragment>
-          )}
         </div>
         
           <form

@@ -1,6 +1,6 @@
 .navbar {
   height: 63px;
-  border-top: 3px solid #f48024;
+  border-top: 3px solid #f6bf42;
   padding: 3px 3px 0 0;
   box-shadow: 5px 2px rgba(0,0,0,0.1);
   z-index: 1000;
@@ -18,6 +18,9 @@
 
 .s-navigation {
   padding: 2px 2px;
+  .s-navigation--item.is-selected {
+    background: #f6bf42;
+  }
 }
 
 .s-navigation .not-selected {

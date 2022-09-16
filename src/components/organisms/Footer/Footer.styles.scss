@@ -2,8 +2,10 @@
   height: 300px;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   padding-top: 32px;
   background-color: #232629;
+  font-size: 24px;
 
   .socials {
     display: flex;
